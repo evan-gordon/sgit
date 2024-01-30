@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bx7q4k437gtlw"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer"]
+custom_minimum_size = Vector2(128, 0)
+ratio = 4.5362
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Example
+"
