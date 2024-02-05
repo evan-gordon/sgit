@@ -56,9 +56,9 @@ func parse_event(event) -> Array:
 	if event is InputEventMouseMotion:
 		return [c, str(event.velocity)]
 	if event is InputEventJoypadButton:
-		return [c, "Axis:" + str(event.axis) + " Value:" + str(event.axis_value)]
-	if event is InputEventJoypadMotion:
 		return [c, str(event.button_index)]
+	if event is InputEventJoypadMotion:
+		return [c, "Axis:" + str(event.axis) + " Value:" + str(event.axis_value)]
 	if event is InputEventScreenTouch:
 		return [c, str(event.position)]
 	return [c, "Unhandled input"]
