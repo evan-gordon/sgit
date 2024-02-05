@@ -23,6 +23,8 @@ func _input(event):
 
 func _unhandled_input(event):
 	var event_data = parse_event(event)
+	if len(event_data) == 0:
+		return
 	# Assume new event.
 	var new_event = false
 	# Todo, it the type is the same i could prune the latest value and add a new one
@@ -58,6 +60,9 @@ func parse_event(event) -> Array:
 	if event is InputEventJoypadButton:
 		return [c, str(event.button_index)]
 	if event is InputEventJoypadMotion:
+		# Clamp joypad inputs.
+		if event.axis_value < 0.05:
+			return []
 		return [c, "Axis:" + str(event.axis) + " Value:" + str(event.axis_value)]
 	if event is InputEventScreenTouch:
 		return [c, str(event.position)]
